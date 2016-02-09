@@ -1,0 +1,7 @@
+<h1>My Todos:</h1>
+<h2><%= link_to "Ajouter une todo", new_todo_path%></h2>
+<% @todos.each do |todo| %>
+<h2><%= link_to todo.name, todo_path(todo)%></h2>
+<p><%= link_to "Editer", edit_todo_path(todo)%></p>
+<p><%= link_to "Supprimer", todo_path(todo), method: :delete, data: {confirm: "Are you sure?"} %></p>
+<% end %>
